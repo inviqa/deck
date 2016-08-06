@@ -1,0 +1,13 @@
+name: Dilithium
+description: A starter theme for Drupal 8.
+type: theme
+core: 8.x
+base theme: stable
+# Regions
+regions:
+  header: Header
+  featured: Featured
+  content: Content
+  sidebar_first: First sidebar
+  sidebar_second: Second sidebar
+  footer: Footer
