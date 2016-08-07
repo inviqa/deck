@@ -1,0 +1,29 @@
+// -----------------------------------------------------------------------------
+// This file contains basic text styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * CONTENTS
+ *
+ * Global           - #GLOBAL
+ */
+
+/*------------------------------------*\
+    #GLOBAL
+\*------------------------------------*/
+
+html {
+
+  font-size: 62.5%;
+
+}
+
+body {
+
+  @include font-size($font--size--body);
+
+  color: $colour--text--base;
+  font-family: $font--family--default;
+  -webkit-font-smoothing: antialiased;
+
+}

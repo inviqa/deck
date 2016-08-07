@@ -1,0 +1,40 @@
+// -----------------------------------------------------------------------------
+// This file contains grid settings.
+//
+// This should not be globally imported in the base import file, as it's
+// imported in main.scss prior to Neat being loaded.
+// -----------------------------------------------------------------------------
+
+@import "neat-helpers";
+
+$desktop-columns    : 12;
+$tablet-columns     : 8;
+$mobile-columns     : 4;
+$grid-columns       : $mobile-columns;
+
+/* Grid settings */
+$outer-gutter       : 25px;
+$max-width          : 1240px;
+$column             : modular-scale(3, 1em, $golden);
+$gutter             : modular-scale(1, 0.4em, $golden);
+
+/* Breakpoints */
+$bp-xsmall             : 320px;
+$bp-small              : 480px;
+$bp-medium             : 600px;
+$bp-large              : 900px;
+$bp-full               : $max-width;
+
+/* Grid breakpoints */
+$bp-xsmall-and-up      : new-breakpoint(min-width $bp-xsmall $mobile-columns);
+$bp-small-and-up       : new-breakpoint(min-width $bp-small $mobile-columns);
+$bp-medium-and-up      : new-breakpoint(min-width $bp-medium $tablet-columns);
+$bp-large-and-up       : new-breakpoint(min-width $bp-large $desktop-columns);
+$bp-full-and-up        : new-breakpoint(min-width $bp-full $desktop-columns);
+$bp-upto-large         : new-breakpoint(max-width ($bp-large - 1) $mobile-columns);
+$bp-upto-medium        : new-breakpoint(max-width ($bp-medium - 1) $tablet-columns);
+
+$bp-xsmall-only        : new-breakpoint(max-width ($bp-small - 1) $mobile-columns);
+$bp-small-only         : new-breakpoint(max-width ($bp-medium - 1) $tablet-columns);
+$bp-medium-only        : new-breakpoint(min-width $bp-medium max-width ($bp-large - 1) $desktop-columns);
+$bp-large-only         : $bp-large-and-up;
