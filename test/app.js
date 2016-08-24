@@ -20,7 +20,8 @@ describe('basic theme scaffolding', function () {
     assert.file([
           'deck.info.yml',
           'deck.theme',
-          'deck.breakpoints.yml'
+          'deck.breakpoints.yml',
+          'screenshot.png'
         ])
   });
 

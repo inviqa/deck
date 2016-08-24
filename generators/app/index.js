@@ -73,6 +73,11 @@ var writing = function () {
     this.destinationPath(this.props.themeMachineName + '.breakpoints.yml')
   );
 
+  // Copy the default logo.
+  this.fs.copy(
+    this.templatePath('screenshot.png'),
+    this.destinationPath('screenshot.png')
+  );
 
 }
 
