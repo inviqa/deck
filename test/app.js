@@ -86,4 +86,20 @@ describe("configurable theme scaffolding", function () {
 
   });
 
+  it("writes a configurable theme file", function (done) {
+
+    var fixture = path.join(__dirname, 'fixtures', 'configured.theme');
+
+    assert.file('dilithium.theme')
+    fs.readFile(fixture, function (err, data) {
+      if (err) {
+        throw err;
+      }
+
+      assert.fileContent('dilithium.theme', data.toString());
+      done();
+    });
+
+  });
+
 });

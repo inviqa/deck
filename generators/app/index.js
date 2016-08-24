@@ -61,9 +61,10 @@ var writing = function () {
   );
 
   // Copy theme file.
-  this.fs.copy(
+  this.fs.copyTpl(
     this.templatePath('theme.theme'),
-    this.destinationPath(this.props.themeMachineName + '.theme')
+    this.destinationPath(this.props.themeMachineName + '.theme'),
+    templateVars
   );
 
   // Copy breakpoints file.
