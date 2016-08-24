@@ -83,17 +83,3 @@ module.exports = yeoman.Base.extend({
   writing: writing
 
 });
-//
-// module.exports = yeoman.Base.extend({
-//
-//   writing: function () {
-//     this.fs.copy(
-//       this.templatePath('dummyfile.txt'),
-//       this.destinationPath('dummyfile.txt')
-//     );
-//   },
-//
-//   install: function () {
-//     this.installDependencies();
-//   }
-// });
