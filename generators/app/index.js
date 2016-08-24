@@ -1,6 +1,5 @@
 'use strict';
 var yeoman = require('yeoman-generator');
-var chalk = require('chalk');
 var yosay = require('yosay');
 var path = require('path');
 var slug = require('transliteration').slugify
@@ -46,10 +45,19 @@ var prompting = function () {
 
 var writing = function () {
 
+  var templateVars = {
+      theme: {
+        name: this.props.themeName,
+        machine: this.props.themeMachineName,
+        description: this.props.themeDescription
+      }
+  };
+
   // Copy info file
-  this.fs.copy(
+  this.fs.copyTpl(
     this.templatePath('theme.info.yml'),
-    this.destinationPath(this.props.themeMachineName + '.info.yml')
+    this.destinationPath(this.props.themeMachineName + '.info.yml'),
+    templateVars
   );
 
   // Copy theme file.

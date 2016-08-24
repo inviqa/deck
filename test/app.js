@@ -38,4 +38,52 @@ describe('basic theme scaffolding', function () {
 
   });
 
+  it('writes a basic theme file', function (done) {
+
+    var fixture = path.join(__dirname, 'fixtures', 'basic.theme');
+
+    fs.readFile(fixture, function (err, data) {
+      if (err) {
+        throw err;
+      }
+
+      assert.fileContent('deck.theme', data.toString());
+      done();
+    });
+
+  });
+
+});
+
+// This is similar to the first suite, but is set up with configuration values
+// changed to ensure templates are written correctly.
+describe("configurable theme scaffolding", function () {
+
+  before(function () {
+    return helpers.run(path.join(__dirname, '../generators/app'))
+      .withPrompts({
+        'themeName': 'Dilithium',
+        'themeMachineName': 'dilithium',
+        'themeDescription': 'An almost really cool theme starter.'
+      })
+      .toPromise();
+  });
+
+  it("writes a configurable info file", function (done) {
+
+    var fixture = path.join(__dirname, 'fixtures', 'configured.info.yml');
+
+    assert.file('dilithium.info.yml');
+
+    fs.readFile(fixture, function (err, data) {
+      if (err) {
+        throw err;
+      }
+
+      assert.fileContent('dilithium.info.yml', data.toString());
+      done();
+    });
+
+  });
+
 });
