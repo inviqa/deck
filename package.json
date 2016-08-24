@@ -8,9 +8,6 @@
     "email": "mchapman@inviqa.com",
     "url": "https://inviqa.com"
   },
-  "engines" : {
-    "node" : ">=4.0.0"
-  },
   "files": [
     "generators"
   ],
@@ -22,8 +19,9 @@
     "yeoman-generator"
   ],
   "dependencies": {
-    "yeoman-generator": "^0.23.0",
     "chalk": "^1.0.0",
+    "transliteration": "^1.1.7",
+    "yeoman-generator": "^0.23.0",
     "yosay": "^1.0.0"
   },
   "devDependencies": {

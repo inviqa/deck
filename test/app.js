@@ -3,16 +3,24 @@ var path = require('path');
 var assert = require('yeoman-assert');
 var helpers = require('yeoman-test');
 
-describe('generator-deck:app', function () {
-  before(function () {
-    return helpers.run(path.join(__dirname, '../generators/app'))
-      .withPrompts({someAnswer: true})
-      .toPromise();
-  });
+describe('basic theme scaffolding', function () {
 
-  it('creates files', function () {
-    assert.file([
-      'dummyfile.txt'
-    ]);
-  });
+    before(function () {
+      return helpers.run(path.join(__dirname, '../generators/app'))
+        .withPrompts({
+          'themeName': 'Deck',
+          'themeMachineName': 'deck',
+          'themeDescription': 'A really cool theme starter.'
+        })
+        .toPromise();
+    });
+
+    it('creates core Drupal files', function () {
+        assert.file([
+          'deck.info.yml',
+          'deck.theme',
+          'deck.breakpoints.yml'
+        ])
+    });
+
 });
