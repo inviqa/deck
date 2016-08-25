@@ -86,10 +86,17 @@ var writing = function () {
     { globOptions: { dot: true } }
   );
 
-  // Copy the template directories.
+  // Copy the hook directories.
   this.fs.copy(
     this.templatePath('hooks'),
     this.destinationPath('hooks'),
+    { globOptions: { dot: true } }
+  );
+
+  // Copy any default templates.
+  this.fs.copy(
+    this.templatePath('templates'),
+    this.destinationPath('templates'),
     { globOptions: { dot: true } }
   );
 

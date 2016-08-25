@@ -60,7 +60,15 @@ describe('basic theme scaffolding', function () {
       'hooks/alter',
       'hooks/preprocess',
       'hooks/alter'
-    ])
+    ]);
+
+  });
+
+  it("adds default templates", function () {
+
+    assert.file([
+      'templates/content/page-title.html.twig'
+    ]);
 
   });
 
