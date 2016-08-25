@@ -1,0 +1,8 @@
+# The libraries below are the standard output when using the Inviqa theme tools.
+core:
+  version: 1.x
+  css:
+    theme:
+      assets/dist/css/main.css: {}
+  js:
+    assets/dist/js/bundle.js: {}

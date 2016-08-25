@@ -21,7 +21,8 @@ describe('basic theme scaffolding', function () {
           'deck.info.yml',
           'deck.theme',
           'deck.breakpoints.yml',
-          'screenshot.png'
+          'screenshot.png',
+          'deck.libraries.yml'
         ])
   });
 
