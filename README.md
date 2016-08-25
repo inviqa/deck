@@ -42,7 +42,7 @@ move to a Yeoman generator.
 With the improvements in Drupal 8's theme layer, there is substantially less to
 do to strip a theme down to the bare minimum. This meant that there was no real
 need for a base theme. However, we still want a consistent theme structure, and
-Yeoman lens itself perfectly to this. Not creating a base theme, also gives us
+Yeoman lends itself perfectly to this. Not creating a base theme, also gives us
 more scope for inheriting from other existing base themes, whilst also keeping
 our preferred project structure. For example; we can easily extend the
 [Bootstrap][bootstrap-drupal] base theme should we need to, which we wouldn't
@@ -54,7 +54,7 @@ could be wider implications for established sites.
 
 ### Why is there no Gulpfile
 
-  Our preferred tool workflow has been split into a separate project.
+Our preferred tool workflow has been split into a separate project.
 
 ### Why does it have to support early versions of Node
 
