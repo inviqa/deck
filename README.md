@@ -73,9 +73,5 @@ the person working on the theme, and may have an earlier version of Node.
 
 -   Ensure `npm test` passes prior to submitting any pull requests.
 
-## License
-
- © [Matt Chapman](https://inviqa.com)
-
 [yeoman]: http://yeoman.io
 [bootstrap-drupal]: https://www.drupal.org/project/bootstrap
