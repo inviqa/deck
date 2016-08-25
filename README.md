@@ -1,5 +1,7 @@
 # Inviqa Drupal generator
 
+A [Yeoman](http://yeoman.io) generator to scaffold a Drupal 8 theme that follows the internal Inviqa workflow.
+
 ## Requirements
 
 * NodeJS (any version)
