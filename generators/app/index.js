@@ -79,6 +79,13 @@ var writing = function () {
     this.destinationPath('screenshot.png')
   );
 
+  // Copy the assets.
+  this.fs.copy(
+    this.templatePath('assets'),
+    this.destinationPath('assets'),
+    { globOptions: { dot: true } }
+  );
+
 }
 
 module.exports = yeoman.Base.extend({

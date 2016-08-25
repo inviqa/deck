@@ -104,3 +104,28 @@ describe("configurable theme scaffolding", function () {
   });
 
 });
+
+describe('asset scaffolding', function () {
+
+  before(function () {
+    return helpers.run(path.join(__dirname, '../generators/app'))
+      .withPrompts({
+        'themeName': 'Deck',
+        'themeMachineName': 'deck',
+        'themeDescription': 'A really cool theme starter.'
+      })
+      .toPromise();
+  });
+
+  it("scaffolds the asset structure", function () {
+
+    assert.file([
+      'assets/src/sass',
+      'assets/src/js',
+      'assets/src/fonts',
+      'assets/src/images'
+    ]);
+
+  });
+
+});
