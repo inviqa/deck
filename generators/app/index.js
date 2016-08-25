@@ -86,6 +86,13 @@ var writing = function () {
     { globOptions: { dot: true } }
   );
 
+  // Copy the template directories.
+  this.fs.copy(
+    this.templatePath('hooks'),
+    this.destinationPath('hooks'),
+    { globOptions: { dot: true } }
+  );
+
 }
 
 module.exports = yeoman.Base.extend({

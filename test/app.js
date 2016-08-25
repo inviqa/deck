@@ -54,6 +54,16 @@ describe('basic theme scaffolding', function () {
 
   });
 
+  it("writes the template directories", function () {
+
+    assert.file([
+      'hooks/alter',
+      'hooks/preprocess',
+      'hooks/alter'
+    ])
+
+  });
+
 });
 
 // This is similar to the first suite, but is set up with configuration values
@@ -105,7 +115,7 @@ describe("configurable theme scaffolding", function () {
 
 });
 
-describe('asset scaffolding', function () {
+describe('asset and template scaffolding', function () {
 
   before(function () {
     return helpers.run(path.join(__dirname, '../generators/app'))
