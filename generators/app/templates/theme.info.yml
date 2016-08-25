@@ -1,5 +1,5 @@
-name: Deck
-description: A starter theme for Drupal 8.
+name: <%= theme.name %>
+description: <%= theme.description %>
 type: theme
 core: 8.x
 base theme: stable

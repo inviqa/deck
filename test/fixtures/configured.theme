@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Functions to support the Dilithium base theme.
+ * Functions to support the Dilithium theme.
  */
 
 // Recursively load all files under the Hooks directory.
