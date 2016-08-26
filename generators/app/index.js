@@ -100,6 +100,12 @@ var writing = function () {
     { globOptions: { dot: true } }
   );
 
+  // Copy the libraries file.
+  this.fs.copy(
+    this.templatePath('theme.libraries.yml'),
+    this.destinationPath(this.props.themeMachineName + '.libraries.yml')
+  )
+
 }
 
 module.exports = yeoman.Base.extend({
