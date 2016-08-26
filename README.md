@@ -5,7 +5,7 @@ follows the internal Inviqa workflow.
 
 ## Requirements
 
--   NodeJS (any version)
+-   NodeJS (>= v4)
 -   [Yeoman][yeoman]
 
 ```bash
