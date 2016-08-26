@@ -106,6 +106,13 @@ var writing = function () {
     this.destinationPath(this.props.themeMachineName + '.libraries.yml')
   )
 
+  // Copy the package.json
+  this.fs.copyTpl(
+    this.templatePath('package.json'),
+    this.destinationPath('package.json'),
+    templateVars
+  )
+
 }
 
 module.exports = yeoman.Base.extend({

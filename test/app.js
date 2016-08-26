@@ -84,4 +84,33 @@ describe('basic theme scaffolding', function () {
 
   });
 
+  it("scaffolds a package.json", function () {
+
+    // var fixture = require('fixtures/package.json');
+
+    assert.jsonFileContent('package.json', require('./fixtures/package.json'))
+
+  });
+
+});
+
+describe('assets', function () {
+
+  before(function () {
+    return helpers.run(path.join(__dirname, '../generators/app'))
+      .withPrompts({
+        'themeName': 'Deck',
+        'themeMachineName': 'deck',
+        'themeDescription': 'A really cool theme starter.'
+      })
+      .toPromise();
+  });
+
+  it('scaffolds compilable SASS', function () {
+
+
+
+
+  });
+
 });
