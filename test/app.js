@@ -75,6 +75,21 @@ describe("deck:app", function () {
 
     });
 
+    it("creates a .gitignore", function (done) {
+
+      var fixture = path.join(__dirname, 'fixtures', 'gitignore');
+
+      fs.readFile(fixture, function (err, data) {
+        if (err) {
+          throw err;
+        }
+
+        assert.fileContent('.gitignore', data.toString());
+        done();
+      });
+
+    });
+
   });
 
   describe('assets', function () {

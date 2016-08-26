@@ -114,6 +114,11 @@ var writing = function () {
     templateVars
   )
 
+  // Copy the gitignore
+  this.fs.copy(
+    this.templatePath('gitignore'),
+    this.destinationPath('.gitignore')
+  )
 }
 
 var install = {
