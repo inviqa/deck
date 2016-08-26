@@ -3,6 +3,7 @@ var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 var path = require('path');
 var slug = require('transliteration').slugify
+var chalk = require('chalk');
 
 var prompting = function () {
 
@@ -115,10 +116,19 @@ var writing = function () {
 
 }
 
+var install = {
+  node: function () {
+    this.log(chalk.yellow('Installing NPM dependencies...'))
+    this.npmInstall()
+  }
+}
+
 module.exports = yeoman.Base.extend({
 
   prompting: prompting,
 
-  writing: writing
+  writing: writing,
+
+  install: install
 
 });
