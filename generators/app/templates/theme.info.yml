@@ -11,3 +11,5 @@ regions:
   sidebar_first: First sidebar
   sidebar_second: Second sidebar
   footer: Footer
+libraries:
+  - <%= theme.machine %>/core

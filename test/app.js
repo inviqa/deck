@@ -73,69 +73,6 @@ describe('basic theme scaffolding', function () {
 
   });
 
-});
-
-// This is similar to the first suite, but is set up with configuration values
-// changed to ensure templates are written correctly.
-describe("configurable theme scaffolding", function () {
-
-  before(function () {
-    return helpers.run(path.join(__dirname, '../generators/app'))
-      .withPrompts({
-        'themeName': 'Dilithium',
-        'themeMachineName': 'dilithium',
-        'themeDescription': 'An almost really cool theme starter.'
-      })
-      .toPromise();
-  });
-
-  it("writes a configurable info file", function (done) {
-
-    var fixture = path.join(__dirname, 'fixtures', 'configured.info.yml');
-
-    assert.file('dilithium.info.yml');
-
-    fs.readFile(fixture, function (err, data) {
-      if (err) {
-        throw err;
-      }
-
-      assert.fileContent('dilithium.info.yml', data.toString());
-      done();
-    });
-
-  });
-
-  it("writes a configurable theme file", function (done) {
-
-    var fixture = path.join(__dirname, 'fixtures', 'configured.theme');
-
-    assert.file('dilithium.theme')
-    fs.readFile(fixture, function (err, data) {
-      if (err) {
-        throw err;
-      }
-
-      assert.fileContent('dilithium.theme', data.toString());
-      done();
-    });
-
-  });
-
-});
-
-describe('asset and template scaffolding', function () {
-
-  before(function () {
-    return helpers.run(path.join(__dirname, '../generators/app'))
-      .withPrompts({
-        'themeName': 'Deck',
-        'themeMachineName': 'deck',
-        'themeDescription': 'A really cool theme starter.'
-      })
-      .toPromise();
-  });
-
   it("scaffolds the asset structure", function () {
 
     assert.file([
