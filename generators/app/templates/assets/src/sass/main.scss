@@ -3,9 +3,9 @@
 // -----------------------------------------------------------------------------
 
 // Import vendor libraries.
-@import "bourbon";
+@import "../../../node_modules/bourbon/app/assets/stylesheets/bourbon";
 @import "utils/settings/grid";
-@import "neat";
+@import "../../../node_modules/bourbon-neat/app/assets/stylesheets/neat";
 
 // Import theme files.
 @import "utils/base";
