@@ -1,5 +1,7 @@
 # Inviqa Drupal generator
 
+![Codeship status](https://codeship.com/projects/5d720b30-4cf5-0134-a8e8-023eb7261af2/status?branch=master)
+
 A [Yeoman][yeoman] generator to scaffold a Drupal 8 theme that
 follows the internal Inviqa workflow.
 
