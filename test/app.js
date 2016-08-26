@@ -96,10 +96,6 @@ describe("deck:app", function () {
 
     });
 
-    it('scaffolds compilable SASS', function () {
-
-    });
-
   });
 
 });
