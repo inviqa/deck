@@ -12,6 +12,7 @@ do
   # https://github.com/npm/npm/blob/master/CHANGELOG.md#more-performant
   npm set progress=false
   nvm use ${NODEJS_VERSION}
+  npm install -g gulp
   npm install
   npm test
 done
