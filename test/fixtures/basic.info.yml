@@ -12,4 +12,5 @@ regions:
   sidebar_second: Second sidebar
   footer: Footer
 libraries:
+  - core/normalize
   - deck/core
