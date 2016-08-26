@@ -63,7 +63,11 @@ the person working on the theme, and may have an earlier version of Node.
 
 ## Contribution
 
--   The generator should work on any version of Node (i.e. no ES6 features).
+-   The generator has a minimum requirement of NodeJS v4. This is because v4 is
+    the earliest LTS release.
+
+-   All tests are run against NodeJS v4 and NodeJS v6 on Codeship, as these are
+    the two LTS versions.
 
 -   Ensure that any new features or changes have accompanying tests. The test
     suite runs with Mocha, and further documentation regarding writing tests for
