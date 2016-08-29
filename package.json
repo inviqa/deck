@@ -8,6 +8,9 @@
     "email": "mchapman@inviqa.com",
     "url": "https://inviqa.com"
   },
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "files": [
     "generators"
   ],

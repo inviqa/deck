@@ -1,11 +1,13 @@
 # Inviqa Drupal generator
 
+![Codeship status](https://codeship.com/projects/5d720b30-4cf5-0134-a8e8-023eb7261af2/status?branch=master)
+
 A [Yeoman][yeoman] generator to scaffold a Drupal 8 theme that
 follows the internal Inviqa workflow.
 
 ## Requirements
 
--   NodeJS (any version)
+-   NodeJS (>= v4)
 -   [Yeoman][yeoman]
 
 ```bash
@@ -63,7 +65,11 @@ the person working on the theme, and may have an earlier version of Node.
 
 ## Contribution
 
--   The generator should work on any version of Node (i.e. no ES6 features).
+-   The generator has a minimum requirement of NodeJS v4. This is because v4 is
+    the earliest LTS release.
+
+-   All tests are run against NodeJS v4 and NodeJS v6 on Codeship, as these are
+    the two LTS versions.
 
 -   Ensure that any new features or changes have accompanying tests. The test
     suite runs with Mocha, and further documentation regarding writing tests for
