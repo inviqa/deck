@@ -47,11 +47,11 @@ var prompting = function () {
 var writing = function () {
 
   var templateVars = {
-      theme: {
-        name: this.props.themeName,
-        machine: this.props.themeMachineName,
-        description: this.props.themeDescription
-      }
+    theme: {
+      name: this.props.themeName,
+      machine: this.props.themeMachineName,
+      description: this.props.themeDescription
+    }
   };
 
   // Copy info file
@@ -83,22 +83,31 @@ var writing = function () {
   // Copy the assets.
   this.fs.copy(
     this.templatePath('assets'),
-    this.destinationPath('assets'),
-    { globOptions: { dot: true } }
+    this.destinationPath('assets'), {
+      globOptions: {
+        dot: true
+      }
+    }
   );
 
   // Copy the hook directories.
   this.fs.copy(
     this.templatePath('hooks'),
-    this.destinationPath('hooks'),
-    { globOptions: { dot: true } }
+    this.destinationPath('hooks'), {
+      globOptions: {
+        dot: true
+      }
+    }
   );
 
   // Copy any default templates.
   this.fs.copy(
     this.templatePath('templates'),
-    this.destinationPath('templates'),
-    { globOptions: { dot: true } }
+    this.destinationPath('templates'), {
+      globOptions: {
+        dot: true
+      }
+    }
   );
 
   // Copy the libraries file.
