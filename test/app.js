@@ -111,6 +111,12 @@ describe("deck:app", function () {
 
     });
 
+    it("scaffolds configuration files", function () {
+      assert.file([
+        'tsconfig.json'
+      ]);
+    });
+
   });
 
 });

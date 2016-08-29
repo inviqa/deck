@@ -119,6 +119,13 @@ var writing = function () {
     this.templatePath('gitignore'),
     this.destinationPath('.gitignore')
   )
+
+  // Copy the TypeScript config
+  this.fs.copy(
+    this.templatePath('tsconfig.json'),
+    this.destinationPath('tsconfig.json')
+  )
+
 }
 
 var install = {
