@@ -3,6 +3,7 @@ var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 var path = require('path');
 var slug = require('transliteration').slugify
+var chalk = require('chalk');
 
 var prompting = function () {
 
@@ -106,12 +107,40 @@ var writing = function () {
     this.destinationPath(this.props.themeMachineName + '.libraries.yml')
   )
 
+  // Copy the package.json
+  this.fs.copyTpl(
+    this.templatePath('package.json'),
+    this.destinationPath('package.json'),
+    templateVars
+  )
+
+  // Copy the gitignore
+  this.fs.copy(
+    this.templatePath('gitignore'),
+    this.destinationPath('.gitignore')
+  )
+
+  // Copy the TypeScript config
+  this.fs.copy(
+    this.templatePath('tsconfig.json'),
+    this.destinationPath('tsconfig.json')
+  )
+
+}
+
+var install = {
+  node: function () {
+    this.log(chalk.yellow('Installing NPM dependencies...'))
+    this.npmInstall()
+  }
 }
 
 module.exports = yeoman.Base.extend({
 
   prompting: prompting,
 
-  writing: writing
+  writing: writing,
+
+  install: install
 
 });
