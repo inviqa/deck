@@ -1,6 +1,8 @@
-var yosay = require('yosay');
-var path = require('path');
-var slug = require('transliteration').slugify
+'use strict';
+
+const yosay = require('yosay');
+const path = require('path');
+const slug = require('transliteration').slugify
 
 module.exports = function () {
 
@@ -8,7 +10,7 @@ module.exports = function () {
     'Let me build you a fabulously empty Drupal 8 theme.'
   ));
 
-  var prompts = [
+  const prompts = [
     {
       'type': 'input',
       'name': 'themeName',
@@ -19,7 +21,7 @@ module.exports = function () {
       'type': 'input',
       'name': 'themeMachineName',
       'message': 'Give your theme a machine name',
-      'default': function (answers) {
+      'default': answers => {
         return slug(answers.themeName, {
           separator: '_'
         });
@@ -29,7 +31,7 @@ module.exports = function () {
       'type': 'input',
       'name': 'themeDescription',
       'message': 'Describe your theme',
-      'default': function (answers) {
+      'default': answers => {
         return 'Default theme for ' + answers.themeName;
       }
     }
@@ -39,4 +41,5 @@ module.exports = function () {
   return this.prompt(prompts).then(function (props) {
     this.props = props
   }.bind(this));
+
 }

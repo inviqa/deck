@@ -2,7 +2,7 @@
 
 module.exports = function () {
 
-  var templateVars = {
+  const templateVars = {
     theme: {
       name: this.props.themeName,
       machine: this.props.themeMachineName,
