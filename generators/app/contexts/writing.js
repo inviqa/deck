@@ -6,7 +6,8 @@ module.exports = function () {
     theme: {
       name: this.props.themeName,
       machine: this.props.themeMachineName,
-      description: this.props.themeDescription
+      description: this.props.themeDescription,
+      baseTheme: this.props.baseTheme
     }
   };
 

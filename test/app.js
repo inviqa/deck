@@ -11,7 +11,8 @@ describe("deck:app", function () {
       .withPrompts({
         'themeName': 'Deck',
         'themeMachineName': 'deck',
-        'themeDescription': 'A really cool theme starter.'
+        'themeDescription': 'A really cool theme starter.',
+        'baseTheme': 'classy'
       })
       .toPromise();
   });
@@ -39,6 +40,12 @@ describe("deck:app", function () {
         assert.fileContent('deck.info.yml', data.toString());
         done();
       });
+
+    });
+
+    it('writes a configurable base theme', function () {
+
+      assert.fileContent('deck.info.yml', 'base theme: classy')
 
     });
 

@@ -1,6 +1,7 @@
 'use strict';
 
 const chalk = require('chalk');
+const Promise = require('bluebird');
 
 module.exports = {
 
@@ -14,6 +15,12 @@ module.exports = {
   },
 
   patternlab: function () {
+
+    // The skip install option is only useful if installing via NPM or Bower,
+    // it doesn't take effect for standard or wrapped spawns.
+    if (this.options.skipInstall) {
+      return;
+    }
 
     this.log(chalk.blue('Installing PatternLab...'));
 

@@ -34,6 +34,16 @@ module.exports = function () {
       'default': answers => {
         return 'Default theme for ' + answers.themeName;
       }
+    },
+    {
+      'type': 'list',
+      'name': 'baseTheme',
+      'message': 'Select a base theme',
+      'choices': ['Stable', 'Classy'],
+      'default': 'Stable',
+      'filter': (response) => {
+        return response.toLowerCase();
+      }
     }
     ];
 
