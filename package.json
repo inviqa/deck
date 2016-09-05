@@ -53,7 +53,7 @@
   "repository": "inviqa/generator-deck",
   "scripts": {
     "prepublish": "gulp prepublish",
-    "test": "gulp"
+    "test": "gulp test"
   },
   "private": true
 }
