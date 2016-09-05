@@ -12,5 +12,8 @@
   ],
   "rules": {
     "node/no-unpublished-require": [0]
+  },
+  "parserOptions": {
+    "ecmaVersion": 6
   }
 }

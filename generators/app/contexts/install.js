@@ -1,6 +1,5 @@
 'use strict';
 
-const chalk = require('chalk');
 const spawnCommandPromise = require('../../../helpers/spawnCommandPromise');
 
 module.exports = {
