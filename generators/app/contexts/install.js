@@ -6,10 +6,13 @@ module.exports = {
 
   node: function () {
 
-    this.installDependencies({
-      bower: false,
-      npm: true
-    });
+    // Only install Bourbon and Neat if they've been requested.
+    if (this.props.bourbonNeat) {
+      this.npmInstall([
+        'bourbon',
+        'bourbon-neat'
+      ])
+    }
 
   },
 
