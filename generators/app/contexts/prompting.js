@@ -17,7 +17,7 @@ module.exports = function () {
       'name': 'themeName',
       'message': 'Give your theme a human readable name',
       'default': () => {
-        const parentDir = process.cwd().split(path.sep).pop();
+        const parentDir = path.basename(process.cwd());
         return titleize(parentDir);
       }
     },
