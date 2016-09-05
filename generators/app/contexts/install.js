@@ -1,7 +1,7 @@
 'use strict';
 
 const chalk = require('chalk');
-const Promise = require('bluebird');
+const spawnCommandPromise = require('../../../helpers/spawnCommandPromise');
 
 module.exports = {
 
@@ -22,19 +22,31 @@ module.exports = {
       return;
     }
 
-    this.log(chalk.blue('Installing PatternLab...'));
-
-    // We run this non interactivly to prevent the starterkit selection message
-    // being lost in the possible NPM noise.
-    return this.spawnCommandSync(
-      'composer', [
+    // We want this so that we can configure PatternLab inside the installation,
+    // rather then splitting over both the Install and End run contexts.
+    // We've also created a helper method for wrapping spawned commands as
+    // promises, so that we can configure PatternLab after it's been installed.
+    const command = spawnCommandPromise('composer', [
         'create-project',
         'pattern-lab/edition-twig-standard',
         'styleguide',
         '--no-interaction',
         '--quiet'
-       ]
-    );
+       ])
+
+    command.then(() => {
+        spawnCommandPromise(
+          'php',
+          [
+            'core/console',
+            '--generate'
+          ],
+          {
+            cwd: 'styleguide'
+          }
+        )
+    });
+
 
   }
 

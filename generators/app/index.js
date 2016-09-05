@@ -8,8 +8,6 @@ module.exports = yeoman.Base.extend({
 
   writing: require('./contexts/writing'),
 
-  install: require('./contexts/install'),
-
-  end: require('./contexts/end')
+  install: require('./contexts/install')
 
 });
