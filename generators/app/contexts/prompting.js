@@ -3,6 +3,7 @@
 const yosay = require('yosay');
 const path = require('path');
 const slug = require('transliteration').slugify
+const titleize = require('titleize');
 
 module.exports = function () {
 
@@ -15,8 +16,11 @@ module.exports = function () {
       'type': 'input',
       'name': 'themeName',
       'message': 'Give your theme a human readable name',
-      'default': process.cwd().split(path.sep).pop()
-      },
+      'default': () => {
+        const parentDir = process.cwd().split(path.sep).pop();
+        return titleize(parentDir);
+      }
+    },
     {
       'type': 'input',
       'name': 'themeMachineName',

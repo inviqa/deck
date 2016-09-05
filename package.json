@@ -24,6 +24,7 @@
   "dependencies": {
     "bluebird": "^3.4.6",
     "chalk": "^1.0.0",
+    "titleize": "^1.0.0",
     "transliteration": "^1.1.7",
     "yeoman-generator": "^0.23.0",
     "yosay": "^1.0.0"
