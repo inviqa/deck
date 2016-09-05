@@ -8,7 +8,8 @@ module.exports = function () {
       machine: this.props.themeMachineName,
       description: this.props.themeDescription,
       baseTheme: this.props.baseTheme
-    }
+    },
+    bourbonNeat: this.props.bourbonNeat
   };
 
   // Copy info file
@@ -39,8 +40,20 @@ module.exports = function () {
 
   // Copy the assets.
   this.fs.copy(
+    this.templatePath('assets/**/.'),
+    this.destinationPath('assets'),
+    {
+      globOptions: {
+        dot: true
+      }
+    }
+  );
+
+  this.fs.copyTpl(
     this.templatePath('assets'),
-    this.destinationPath('assets'), {
+    this.destinationPath('assets'),
+    templateVars,
+    {
       globOptions: {
         dot: true
       }

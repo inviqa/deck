@@ -3,9 +3,11 @@
 // -----------------------------------------------------------------------------
 
 // Import vendor libraries.
+<% if (bourbonNeat) { %>
 @import "../../../node_modules/bourbon/app/assets/stylesheets/bourbon";
 @import "utils/settings/grid";
 @import "../../../node_modules/bourbon-neat/app/assets/stylesheets/neat";
+<% } %>
 
 // Import theme files.
 @import "utils/base";

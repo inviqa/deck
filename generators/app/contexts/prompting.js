@@ -2,7 +2,8 @@
 
 const yosay = require('yosay');
 const path = require('path');
-const slug = require('transliteration').slugify
+const slug = require('transliteration').slugify;
+const titleize = require('titleize');
 
 module.exports = function () {
 
@@ -15,8 +16,11 @@ module.exports = function () {
       'type': 'input',
       'name': 'themeName',
       'message': 'Give your theme a human readable name',
-      'default': process.cwd().split(path.sep).pop()
-      },
+      'default': () => {
+        const parentDir = path.basename(process.cwd());
+        return titleize(parentDir);
+      }
+    },
     {
       'type': 'input',
       'name': 'themeMachineName',
@@ -44,6 +48,12 @@ module.exports = function () {
       'filter': (response) => {
         return response.toLowerCase();
       }
+    },
+    {
+      'type': 'confirm',
+      'name': 'bourbonNeat',
+      'message': 'Should I install Bourbon and Neat',
+      'default': true
     }
     ];
 

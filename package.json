@@ -24,6 +24,7 @@
   "dependencies": {
     "bluebird": "^3.4.6",
     "chalk": "^1.0.0",
+    "titleize": "^1.0.0",
     "transliteration": "^1.1.7",
     "yeoman-generator": "^0.23.0",
     "yosay": "^1.0.0"
@@ -31,6 +32,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-as-promised": "^5.3.0",
+    "chai-files": "^1.4.0",
     "eslint": "^3.1.1",
     "eslint-config-xo-space": "^0.14.0",
     "eslint-plugin-node": "^2.0.0",
@@ -51,7 +53,7 @@
   "repository": "inviqa/generator-deck",
   "scripts": {
     "prepublish": "gulp prepublish",
-    "test": "gulp"
+    "test": "gulp test"
   },
   "private": true
 }
