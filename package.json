@@ -22,12 +22,15 @@
     "yeoman-generator"
   ],
   "dependencies": {
+    "bluebird": "^3.4.6",
     "chalk": "^1.0.0",
     "transliteration": "^1.1.7",
     "yeoman-generator": "^0.23.0",
     "yosay": "^1.0.0"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
     "eslint": "^3.1.1",
     "eslint-config-xo-space": "^0.14.0",
     "eslint-plugin-node": "^2.0.0",
@@ -39,6 +42,8 @@
     "gulp-mocha": "^2.0.0",
     "gulp-nsp": "^2.1.0",
     "gulp-plumber": "^1.0.0",
+    "node-sass": "^3.8.0",
+    "sinon": "^1.17.5",
     "tern-node-extension": "^0.5.0",
     "yeoman-assert": "^2.0.0",
     "yeoman-test": "^1.0.0"

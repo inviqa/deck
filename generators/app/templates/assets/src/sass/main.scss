@@ -3,14 +3,12 @@
 // -----------------------------------------------------------------------------
 
 // Import vendor libraries.
-@import "normalize";
-@import "bourbon";
-@import "settings/grid";
-@import "neat";
+@import "../../../node_modules/bourbon/app/assets/stylesheets/bourbon";
+@import "utils/settings/grid";
+@import "../../../node_modules/bourbon-neat/app/assets/stylesheets/neat";
 
 // Import theme files.
 @import "utils/base";
-@import "settings/base";
 @import "_atoms/base";
 @import "_molecules/base";
 @import "_organisms/base";

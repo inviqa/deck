@@ -1,0 +1,9 @@
+{
+  "name": "deck",
+  "version": "1.0.0",
+  "description": "Dependencies for Deck",
+  "devDependencies": {
+    "bourbon": "^4.2.7",
+    "bourbon-neat": "^1.8.0"
+  }
+}

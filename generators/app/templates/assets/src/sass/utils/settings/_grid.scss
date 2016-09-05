@@ -5,7 +5,7 @@
 // imported in main.scss prior to Neat being loaded.
 // -----------------------------------------------------------------------------
 
-@import "neat-helpers";
+@import "../../../../../node_modules/bourbon-neat/app/assets/stylesheets/neat-helpers";
 
 $desktop-columns    : 12;
 $tablet-columns     : 8;
