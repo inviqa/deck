@@ -8,7 +8,7 @@ chai.use(require("chai-as-promised"));
 
 // Test specific imports.
 const proc = require('child_process');
-const spawnPromise = require('../../helpers/spawnCommandPromise');
+const spawnPromise = require('../../generators/app/helpers/spawnCommandPromise');
 
 describe("spawnCommandPromise helper", () => {
 
