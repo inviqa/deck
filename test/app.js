@@ -36,7 +36,7 @@ describe("deck:app", function () {
         'deck.breakpoints.yml',
         'screenshot.png',
         'deck.libraries.yml'
-      ])
+      ]);
     });
 
     it('writes a basic info file', function (done) {
@@ -55,7 +55,7 @@ describe("deck:app", function () {
 
     it('writes a configurable base theme', function () {
 
-      assert.fileContent('deck.info.yml', 'base theme: classy')
+      assert.fileContent('deck.info.yml', 'base theme: classy');
 
     });
 
@@ -113,7 +113,7 @@ describe("deck:app", function () {
 
     it("scaffolds a package.json", function () {
 
-      assert.jsonFileContent('package.json', require('./fixtures/package.json'))
+      assert.jsonFileContent('package.json', require('./fixtures/package.json'));
 
     });
 
@@ -150,12 +150,12 @@ describe("deck:app", function () {
 
       it("installs Bourbon/Neat if specified", function () {
         const mainSassFile = 'assets/src/sass/main.scss';
-        expect(file(mainSassFile)).to.contain('@import "bourbon";')
-        expect(file(mainSassFile)).to.contain('@import "utils/settings/grid";')
-        expect(file(mainSassFile)).to.contain('@import "neat";')
+        expect(file(mainSassFile)).to.contain('@import "bourbon";');
+        expect(file(mainSassFile)).to.contain('@import "utils/settings/grid";');
+        expect(file(mainSassFile)).to.contain('@import "neat";');
       });
 
-    })
+    });
 
     describe('SASS with no bourbon specified', function () {
 
@@ -173,12 +173,12 @@ describe("deck:app", function () {
 
       it("does not install Bourbon/Neat if unrequired", function () {
         const mainSassFile = 'assets/src/sass/main.scss';
-        expect(file(mainSassFile)).to.not.contain('@import "bourbon";')
-        expect(file(mainSassFile)).to.not.contain('@import "utils/settings/grid";')
-        expect(file(mainSassFile)).to.not.contain('@import "neat";')
+        expect(file(mainSassFile)).to.not.contain('@import "bourbon";');
+        expect(file(mainSassFile)).to.not.contain('@import "utils/settings/grid";');
+        expect(file(mainSassFile)).to.not.contain('@import "neat";');
       });
 
-    })
+    });
 
   });
 
