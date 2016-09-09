@@ -52,7 +52,7 @@ module.exports = function () {
     {
       'type': 'confirm',
       'name': 'bourbonNeat',
-      'message': 'Should I install Bourbon and Neat',
+      'message': 'Will you be using Bourbon and Neat?',
       'default': true
     }
     ];
