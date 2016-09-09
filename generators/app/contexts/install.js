@@ -1,6 +1,6 @@
 'use strict';
 
-const spawnCommandPromise = require('../../../helpers/spawnCommandPromise');
+const spawnCommandPromise = require('../helpers/spawnCommandPromise');
 
 module.exports = {
 
