@@ -1,7 +1,19 @@
 {
-  "dependencies": {
-    "chai": "registry:npm/chai#3.5.0+20160723033700",
-    "chai-as-promised": "registry:npm/chai-as-promised#5.1.0+20160310030142",
-    "sinon": "registry:npm/sinon#1.16.0+20160723033700"
+  "globalDependencies": {
+    "bluebird": "registry:dt/bluebird#3.0.0+20160907110115",
+    "chalk": "registry:dt/chalk#0.4.0+20160317120654",
+    "node": "registry:dt/node#6.0.0+20160915134512",
+    "yeoman-generator": "registry:dt/yeoman-generator#0.0.0+20160831020201",
+    "yosay": "registry:dt/yosay#0.0.0+20160316155526"
+  },
+  "globalDevDependencies": {
+    "chai": "registry:dt/chai#3.4.0+20160601211834",
+    "chai-as-promised": "registry:dt/chai-as-promised#0.0.0+20160423070304",
+    "gulp": "registry:dt/gulp#3.8.0+20160907112908",
+    "gulp-istanbul": "registry:dt/gulp-istanbul#0.9.0+20160317120654",
+    "gulp-mocha": "registry:dt/gulp-mocha#0.0.0+20160316155526",
+    "gulp-plumber": "registry:dt/gulp-plumber#0.0.0+20160316155526",
+    "node-sass": "registry:dt/node-sass#0.0.0+20160316155526",
+    "sinon": "registry:dt/sinon#1.16.0+20160517064723"
   }
 }
