@@ -59,7 +59,7 @@ module.exports = function () {
 
   // Capture the answers and store them on the generator instance.
   return this.prompt(prompts).then(function (props) {
-    this.props = props
+    this.props = props;
   }.bind(this));
 
-}
+};

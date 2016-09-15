@@ -84,25 +84,25 @@ module.exports = function () {
   this.fs.copy(
     this.templatePath('theme.libraries.yml'),
     this.destinationPath(this.props.themeMachineName + '.libraries.yml')
-  )
+  );
 
   // Copy the package.json
   this.fs.copyTpl(
     this.templatePath('package.json'),
     this.destinationPath('package.json'),
     templateVars
-  )
+  );
 
   // Copy the gitignore
   this.fs.copy(
     this.templatePath('gitignore'),
     this.destinationPath('.gitignore')
-  )
+  );
 
   // Copy the TypeScript config
   this.fs.copy(
     this.templatePath('tsconfig.json'),
     this.destinationPath('tsconfig.json')
-  )
+  );
 
-}
+};

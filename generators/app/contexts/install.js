@@ -11,7 +11,7 @@ module.exports = {
       this.npmInstall([
         'bourbon',
         'bourbon-neat'
-      ])
+      ]);
     }
 
   },
@@ -34,7 +34,7 @@ module.exports = {
         'styleguide',
         '--no-interaction',
         '--quiet'
-       ])
+       ]);
 
     command.then(() => {
         spawnCommandPromise(
@@ -46,10 +46,10 @@ module.exports = {
           {
             cwd: 'styleguide'
           }
-        )
+        );
     });
 
 
   }
 
-}
+};
