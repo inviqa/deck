@@ -12,11 +12,11 @@ const dir = chaiFiles.dir;
 const path = require('path');
 const helpers = require('yeoman-test');
 
-describe("deck:app", function () {
+describe("deck:app", () => {
 
-  describe('basic theme scaffolding', function () {
+  describe('basic theme scaffolding', () => {
 
-    before(function () {
+    before(() => {
 
       return helpers.run(path.join(__dirname, '../generators/app'))
         .withPrompts({
@@ -30,7 +30,7 @@ describe("deck:app", function () {
 
     });
 
-    it('creates core Drupal files', function () {
+    it('creates core Drupal files', () => {
 
       expect(file('deck.info.yml')).to.exist;
       expect(file('deck.theme')).to.exist;
@@ -40,7 +40,7 @@ describe("deck:app", function () {
 
     });
 
-    it('writes a basic info file', function () {
+    it('writes a basic info file', () => {
 
       var fixture = path.join(__dirname, 'fixtures', 'basic.info.yml');
 
@@ -48,7 +48,7 @@ describe("deck:app", function () {
 
     });
 
-    it('writes a basic theme file', function () {
+    it('writes a basic theme file', () => {
 
       var fixture = path.join(__dirname, 'fixtures', 'basic.theme');
 
@@ -56,7 +56,7 @@ describe("deck:app", function () {
 
     });
 
-    it("writes the template directories", function () {
+    it("writes the template directories", () => {
 
       expect(dir('hooks/alter')).to.exist;
       expect(dir('hooks/preprocess')).to.exist;
@@ -64,13 +64,13 @@ describe("deck:app", function () {
 
     });
 
-    it("adds default templates", function () {
+    it("adds default templates", () => {
 
       expect(file('templates/content/page-title.html.twig')).to.exist;
 
     });
 
-    it("creates a .gitignore", function () {
+    it("creates a .gitignore", () => {
 
       expect(file('.gitignore')).to.exist;
 
@@ -78,9 +78,9 @@ describe("deck:app", function () {
 
   });
 
-  describe('configured theme scaffolding', function () {
+  describe('configured theme scaffolding', () => {
 
-    before(function () {
+    before(() => {
 
       return helpers.run(path.join(__dirname, '../generators/app'))
         .withPrompts({
@@ -122,15 +122,15 @@ describe("deck:app", function () {
 
   });
 
-  describe('assets', function () {
+  describe('assets', () => {
 
-    it("creates a package.json", function () {
+    it("creates a package.json", () => {
 
       expect(file('package.json')).to.exist;
 
     });
 
-    it("scaffolds the asset structure", function () {
+    it("scaffolds the asset structure", () => {
 
       expect(dir('assets/src/sass')).to.exist;
       expect(dir('assets/src/js')).to.exist;
@@ -139,7 +139,7 @@ describe("deck:app", function () {
 
     });
 
-    it("scaffolds configuration files", function () {
+    it("scaffolds configuration files", () => {
 
       expect(file('tsconfig.json')).to.exist;
 
@@ -148,9 +148,9 @@ describe("deck:app", function () {
 
     describe('SASS', () => {
 
-      describe('with Bourbon/Neat', function () {
+      describe('with Bourbon/Neat', () => {
 
-        before(function () {
+        before(() => {
 
           return helpers.run(path.join(__dirname, '../generators/app'))
             .withPrompts({
@@ -164,7 +164,7 @@ describe("deck:app", function () {
 
         });
 
-        it("imports Bourbon/Neat", function () {
+        it("imports Bourbon/Neat", () => {
 
           const mainSassFile = 'assets/src/sass/main.scss';
 
@@ -176,9 +176,9 @@ describe("deck:app", function () {
 
       });
 
-      describe('without Bourbon/Neat', function () {
+      describe('without Bourbon/Neat', () => {
 
-        before(function () {
+        before(() => {
 
           return helpers.run(path.join(__dirname, '../generators/app'))
             .withPrompts({
@@ -192,7 +192,7 @@ describe("deck:app", function () {
 
         });
 
-        it("does not import Bourbon/Neat", function () {
+        it("does not import Bourbon/Neat", () => {
 
           const mainSassFile = 'assets/src/sass/main.scss';
 
