@@ -14,27 +14,27 @@ const helpers = require('yeoman-test');
 
 describe("deck:app", function () {
 
-  before(function () {
-    return helpers.run(path.join(__dirname, '../generators/app'))
-      .withPrompts({
-        'themeName': 'Deck',
-        'themeMachineName': 'deck',
-        'themeDescription': 'A really cool theme starter.',
-        'baseTheme': 'classy',
-        'bourbonNeat': true
-      })
-      .toPromise();
-  });
-
   describe('basic theme scaffolding', function () {
+
+    before(function () {
+      return helpers.run(path.join(__dirname, '../generators/app'))
+        .withPrompts({
+          'themeName': 'Deck',
+          'themeMachineName': 'deck',
+          'themeDescription': 'A really cool theme starter.',
+          'baseTheme': 'classy',
+          'bourbonNeat': true
+        })
+        .toPromise();
+    });
 
     it('creates core Drupal files', function () {
 
-        expect(file('deck.info.yml')).to.exist;
-        expect(file('deck.theme')).to.exist;
-        expect(file('deck.breakpoints.yml')).to.exist;
-        expect(file('screenshot.png')).to.exist;
-        expect(file('deck.libraries.yml')).to.exist;
+      expect(file('deck.info.yml')).to.exist;
+      expect(file('deck.theme')).to.exist;
+      expect(file('deck.breakpoints.yml')).to.exist;
+      expect(file('screenshot.png')).to.exist;
+      expect(file('deck.libraries.yml')).to.exist;
 
     });
 
@@ -56,9 +56,9 @@ describe("deck:app", function () {
 
     it("writes the template directories", function () {
 
-        expect(dir('hooks/alter')).to.exist;
-        expect(dir('hooks/preprocess')).to.exist;
-        expect(dir('hooks/alter')).to.exist;
+      expect(dir('hooks/alter')).to.exist;
+      expect(dir('hooks/preprocess')).to.exist;
+      expect(dir('hooks/alter')).to.exist;
 
     });
 
@@ -76,6 +76,48 @@ describe("deck:app", function () {
 
   });
 
+  describe('configured theme scaffolding', function () {
+
+    before(function () {
+      return helpers.run(path.join(__dirname, '../generators/app'))
+        .withPrompts({
+          'themeName': 'Mast',
+          'themeMachineName': 'mast',
+          'themeDescription': 'A really cool theme starter.',
+          'baseTheme': 'stable',
+          'bourbonNeat': false
+        })
+        .toPromise();
+    });
+
+
+    it('creates configured theme files', () => {
+
+      expect(file('deck.info.yml')).to.not.exist;
+      expect(file('deck.theme')).to.not.exist;
+      expect(file('deck.breakpoints.yml')).to.not.exist;
+      expect(file('screenshot.png')).to.exist;
+      expect(file('deck.libraries.yml')).to.not.exist;
+
+      expect(file('mast.info.yml')).to.exist;
+      expect(file('mast.theme')).to.exist;
+      expect(file('mast.breakpoints.yml')).to.exist;
+      expect(file('screenshot.png')).to.exist;
+      expect(file('mast.libraries.yml')).to.exist;
+
+    });
+
+
+    it('writes the specified base theme to the info file', () => {
+
+      expect(file('mast.info.yml')).to.not.contain('base theme: classy');
+      expect(file('mast.info.yml')).to.contain('base theme: stable');
+
+    });
+
+
+  });
+
   describe('assets', function () {
 
     it("creates a package.json", function () {
@@ -86,10 +128,10 @@ describe("deck:app", function () {
 
     it("scaffolds the asset structure", function () {
 
-        expect(dir('assets/src/sass')).to.exist;
-        expect(dir('assets/src/js')).to.exist;
-        expect(dir('assets/src/fonts')).to.exist;
-        expect(dir('assets/src/images')).to.exist;
+      expect(dir('assets/src/sass')).to.exist;
+      expect(dir('assets/src/js')).to.exist;
+      expect(dir('assets/src/fonts')).to.exist;
+      expect(dir('assets/src/images')).to.exist;
 
     });
 
@@ -99,48 +141,53 @@ describe("deck:app", function () {
 
     });
 
-    describe('SASS with Bourbon specified', function () {
 
-      before(function () {
-        return helpers.run(path.join(__dirname, '../generators/app'))
-          .withPrompts({
-            'themeName': 'Deck',
-            'themeMachineName': 'deck',
-            'themeDescription': 'A really cool theme starter.',
-            'baseTheme': 'classy',
-            'bourbonNeat': true
-          })
-          .toPromise();
+    describe('SASS', () => {
+
+      describe('with Bourbon/Neat', function () {
+
+        before(function () {
+          return helpers.run(path.join(__dirname, '../generators/app'))
+            .withPrompts({
+              'themeName': 'Deck',
+              'themeMachineName': 'deck',
+              'themeDescription': 'A really cool theme starter.',
+              'baseTheme': 'classy',
+              'bourbonNeat': true
+            })
+            .toPromise();
+        });
+
+        it("imports Bourbon/Neat", function () {
+          const mainSassFile = 'assets/src/sass/main.scss';
+          expect(file(mainSassFile)).to.contain('@import "bourbon";');
+          expect(file(mainSassFile)).to.contain('@import "utils/settings/grid";');
+          expect(file(mainSassFile)).to.contain('@import "neat";');
+        });
+
       });
 
-      it("installs Bourbon/Neat if specified", function () {
-        const mainSassFile = 'assets/src/sass/main.scss';
-        expect(file(mainSassFile)).to.contain('@import "bourbon";');
-        expect(file(mainSassFile)).to.contain('@import "utils/settings/grid";');
-        expect(file(mainSassFile)).to.contain('@import "neat";');
-      });
+      describe('without Bourbon/Neat', function () {
 
-    });
+        before(function () {
+          return helpers.run(path.join(__dirname, '../generators/app'))
+            .withPrompts({
+              'themeName': 'Deck',
+              'themeMachineName': 'deck',
+              'themeDescription': 'A really cool theme starter.',
+              'baseTheme': 'classy',
+              'bourbonNeat': false
+            })
+            .toPromise();
+        });
 
-    describe('SASS with no bourbon specified', function () {
+        it("does not import Bourbon/Neat", function () {
+          const mainSassFile = 'assets/src/sass/main.scss';
+          expect(file(mainSassFile)).to.not.contain('@import "bourbon";');
+          expect(file(mainSassFile)).to.not.contain('@import "utils/settings/grid";');
+          expect(file(mainSassFile)).to.not.contain('@import "neat";');
+        });
 
-      before(function () {
-        return helpers.run(path.join(__dirname, '../generators/app'))
-          .withPrompts({
-            'themeName': 'Deck',
-            'themeMachineName': 'deck',
-            'themeDescription': 'A really cool theme starter.',
-            'baseTheme': 'classy',
-            'bourbonNeat': false
-          })
-          .toPromise();
-      });
-
-      it("does not install Bourbon/Neat if unrequired", function () {
-        const mainSassFile = 'assets/src/sass/main.scss';
-        expect(file(mainSassFile)).to.not.contain('@import "bourbon";');
-        expect(file(mainSassFile)).to.not.contain('@import "utils/settings/grid";');
-        expect(file(mainSassFile)).to.not.contain('@import "neat";');
       });
 
     });
