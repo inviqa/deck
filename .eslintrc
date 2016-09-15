@@ -12,7 +12,8 @@
     "plugin:node/recommended"
   ],
   "rules": {
-    "node/no-unpublished-require": [0]
+    "node/no-unpublished-require": [0],
+    "semi": [2, "always"]
   },
   "parserOptions": {
     "ecmaVersion": 6
