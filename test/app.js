@@ -17,6 +17,7 @@ describe("deck:app", function () {
   describe('basic theme scaffolding', function () {
 
     before(function () {
+
       return helpers.run(path.join(__dirname, '../generators/app'))
         .withPrompts({
           'themeName': 'Deck',
@@ -26,6 +27,7 @@ describe("deck:app", function () {
           'bourbonNeat': true
         })
         .toPromise();
+
     });
 
     it('creates core Drupal files', function () {
@@ -79,6 +81,7 @@ describe("deck:app", function () {
   describe('configured theme scaffolding', function () {
 
     before(function () {
+
       return helpers.run(path.join(__dirname, '../generators/app'))
         .withPrompts({
           'themeName': 'Mast',
@@ -88,6 +91,7 @@ describe("deck:app", function () {
           'bourbonNeat': false
         })
         .toPromise();
+
     });
 
 
@@ -147,6 +151,7 @@ describe("deck:app", function () {
       describe('with Bourbon/Neat', function () {
 
         before(function () {
+
           return helpers.run(path.join(__dirname, '../generators/app'))
             .withPrompts({
               'themeName': 'Deck',
@@ -156,13 +161,17 @@ describe("deck:app", function () {
               'bourbonNeat': true
             })
             .toPromise();
+
         });
 
         it("imports Bourbon/Neat", function () {
+
           const mainSassFile = 'assets/src/sass/main.scss';
+
           expect(file(mainSassFile)).to.contain('@import "bourbon";');
           expect(file(mainSassFile)).to.contain('@import "utils/settings/grid";');
           expect(file(mainSassFile)).to.contain('@import "neat";');
+
         });
 
       });
@@ -170,6 +179,7 @@ describe("deck:app", function () {
       describe('without Bourbon/Neat', function () {
 
         before(function () {
+
           return helpers.run(path.join(__dirname, '../generators/app'))
             .withPrompts({
               'themeName': 'Deck',
@@ -179,13 +189,17 @@ describe("deck:app", function () {
               'bourbonNeat': false
             })
             .toPromise();
+
         });
 
         it("does not import Bourbon/Neat", function () {
+
           const mainSassFile = 'assets/src/sass/main.scss';
+
           expect(file(mainSassFile)).to.not.contain('@import "bourbon";');
           expect(file(mainSassFile)).to.not.contain('@import "utils/settings/grid";');
           expect(file(mainSassFile)).to.not.contain('@import "neat";');
+
         });
 
       });
