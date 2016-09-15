@@ -6,12 +6,11 @@ const expect = chai.expect;
 const chaiFiles = require('chai-files');
 chai.use(chaiFiles);
 const file = chaiFiles.file;
+const dir = chaiFiles.dir;
 
 // Other imports.
 const path = require('path');
-const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
-const fs = require('fs');
 
 describe("deck:app", function () {
 
@@ -30,80 +29,48 @@ describe("deck:app", function () {
   describe('basic theme scaffolding', function () {
 
     it('creates core Drupal files', function () {
-      assert.file([
-        'deck.info.yml',
-        'deck.theme',
-        'deck.breakpoints.yml',
-        'screenshot.png',
-        'deck.libraries.yml'
-      ]);
+
+        expect(file('deck.info.yml')).to.exist;
+        expect(file('deck.theme')).to.exist;
+        expect(file('deck.breakpoints.yml')).to.exist;
+        expect(file('screenshot.png')).to.exist;
+        expect(file('deck.libraries.yml')).to.exist;
+
     });
 
-    it('writes a basic info file', function (done) {
+    it('writes a basic info file', function () {
+
       var fixture = path.join(__dirname, 'fixtures', 'basic.info.yml');
 
-      fs.readFile(fixture, function (err, data) {
-        if (err) {
-          throw err;
-        }
-
-        assert.fileContent('deck.info.yml', data.toString());
-        done();
-      });
+      expect(file('deck.info.yml')).to.equal(file(fixture));
 
     });
 
-    it('writes a configurable base theme', function () {
-
-      assert.fileContent('deck.info.yml', 'base theme: classy');
-
-    });
-
-    it('writes a basic theme file', function (done) {
+    it('writes a basic theme file', function () {
 
       var fixture = path.join(__dirname, 'fixtures', 'basic.theme');
 
-      fs.readFile(fixture, function (err, data) {
-        if (err) {
-          throw err;
-        }
-
-        assert.fileContent('deck.theme', data.toString());
-        done();
-      });
+      expect(file('deck.theme')).to.equal(file(fixture));
 
     });
 
     it("writes the template directories", function () {
 
-      assert.file([
-        'hooks/alter',
-        'hooks/preprocess',
-        'hooks/alter'
-      ]);
+        expect(dir('hooks/alter')).to.exist;
+        expect(dir('hooks/preprocess')).to.exist;
+        expect(dir('hooks/alter')).to.exist;
 
     });
 
     it("adds default templates", function () {
 
-      assert.file([
-        'templates/content/page-title.html.twig'
-      ]);
+      expect(file('templates/content/page-title.html.twig')).to.exist;
 
     });
 
-    it("creates a .gitignore", function (done) {
+    it("creates a .gitignore", function () {
 
-      var fixture = path.join(__dirname, 'fixtures', 'gitignore');
-
-      fs.readFile(fixture, function (err, data) {
-        if (err) {
-          throw err;
-        }
-
-        assert.fileContent('.gitignore', data.toString());
-        done();
-      });
+      expect(file('.gitignore')).to.exist;
 
     });
 
@@ -111,27 +78,25 @@ describe("deck:app", function () {
 
   describe('assets', function () {
 
-    it("scaffolds a package.json", function () {
+    it("creates a package.json", function () {
 
-      assert.jsonFileContent('package.json', require('./fixtures/package.json'));
+      expect(file('package.json')).to.exist;
 
     });
 
     it("scaffolds the asset structure", function () {
 
-      assert.file([
-        'assets/src/sass',
-        'assets/src/js',
-        'assets/src/fonts',
-        'assets/src/images'
-      ]);
+        expect(dir('assets/src/sass')).to.exist;
+        expect(dir('assets/src/js')).to.exist;
+        expect(dir('assets/src/fonts')).to.exist;
+        expect(dir('assets/src/images')).to.exist;
 
     });
 
     it("scaffolds configuration files", function () {
-      assert.file([
-        'tsconfig.json'
-      ]);
+
+      expect(file('tsconfig.json')).to.exist;
+
     });
 
     describe('SASS with Bourbon specified', function () {

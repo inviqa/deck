@@ -45,7 +45,6 @@
     "gulp-plumber": "^1.0.0",
     "node-sass": "^3.8.0",
     "sinon": "^1.17.5",
-    "yeoman-assert": "^2.0.0",
     "yeoman-test": "^1.0.0"
   },
   "repository": "inviqa/generator-deck",
