@@ -52,14 +52,14 @@ module.exports = function () {
     {
       'type': 'confirm',
       'name': 'bourbonNeat',
-      'message': 'Should I install Bourbon and Neat',
+      'message': 'Will you be using Bourbon and Neat?',
       'default': true
     }
     ];
 
   // Capture the answers and store them on the generator instance.
   return this.prompt(prompts).then(function (props) {
-    this.props = props
+    this.props = props;
   }.bind(this));
 
-}
+};

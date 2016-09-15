@@ -22,7 +22,7 @@ module.exports = (command, args, opts) => {
     // Handle any general CLI errors.
     spawned.on('error', err => {
       reject(new Error(`Error: ${err}`));
-    })
+    });
 
     // When the process has ended, resolve or reject the promise.
     spawned.on('close', code => {
@@ -38,4 +38,4 @@ module.exports = (command, args, opts) => {
 
   });
 
-}
+};
