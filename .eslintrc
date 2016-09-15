@@ -4,18 +4,14 @@
     "node": true,
     "es6": true
   },
-  "plugins": [
-    "node"
-  ],
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
   "extends": [
-    "eslint:recommended",
-    "plugin:node/recommended"
+    "eslint:recommended"
   ],
   "rules": {
     "node/no-unpublished-require": [0],
     "semi": [2, "always"]
-  },
-  "parserOptions": {
-    "ecmaVersion": 6
   }
 }

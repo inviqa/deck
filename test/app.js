@@ -150,9 +150,9 @@ describe("deck:app", function () {
 
       it("installs Bourbon/Neat if specified", function () {
         const mainSassFile = 'assets/src/sass/main.scss';
-        expect(file(mainSassFile)).to.contain('@import "../../../node_modules/bourbon/app/assets/stylesheets/bourbon";');
+        expect(file(mainSassFile)).to.contain('@import "bourbon";');
         expect(file(mainSassFile)).to.contain('@import "utils/settings/grid";');
-        expect(file(mainSassFile)).to.contain('@import "../../../node_modules/bourbon-neat/app/assets/stylesheets/neat";');
+        expect(file(mainSassFile)).to.contain('@import "neat";');
       });
 
     });
@@ -173,9 +173,9 @@ describe("deck:app", function () {
 
       it("does not install Bourbon/Neat if unrequired", function () {
         const mainSassFile = 'assets/src/sass/main.scss';
-        expect(file(mainSassFile)).to.not.contain('@import "../../../node_modules/bourbon/app/assets/stylesheets/bourbon";');
+        expect(file(mainSassFile)).to.not.contain('@import "bourbon";');
         expect(file(mainSassFile)).to.not.contain('@import "utils/settings/grid";');
-        expect(file(mainSassFile)).to.not.contain('@import "../../../node_modules/bourbon-neat/app/assets/stylesheets/neat";');
+        expect(file(mainSassFile)).to.not.contain('@import "neat";');
       });
 
     });

@@ -4,18 +4,6 @@ const spawnCommandPromise = require('../helpers/spawnCommandPromise');
 
 module.exports = {
 
-  node: function () {
-
-    // Only install Bourbon and Neat if they've been requested.
-    if (this.props.bourbonNeat) {
-      this.npmInstall([
-        'bourbon',
-        'bourbon-neat'
-      ]);
-    }
-
-  },
-
   patternlab: function () {
 
     // The skip install option is only useful if installing via NPM or Bower,
