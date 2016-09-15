@@ -1,0 +1,2 @@
+# <%= theme.name %>
+## <%= theme.description %>

@@ -105,4 +105,11 @@ module.exports = function () {
     this.destinationPath('tsconfig.json')
   );
 
+  // Copy the README.
+  this.fs.copyTpl(
+    this.templatePath('README.md'),
+    this.destinationPath('README.md'),
+    templateVars
+  );
+
 };

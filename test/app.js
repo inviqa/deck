@@ -76,6 +76,10 @@ describe("deck:app", () => {
 
     });
 
+    it('creates a readme', () => {
+      expect(file('README.md')).to.exist;
+    });
+
   });
 
   describe('configured theme scaffolding', () => {
