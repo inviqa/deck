@@ -4,7 +4,6 @@ const yosay = require('yosay');
 const path = require('path');
 const slug = require('transliteration').slugify;
 const titleize = require('titleize');
-const inquirer = require('inquirer');
 
 module.exports = function () {
 
