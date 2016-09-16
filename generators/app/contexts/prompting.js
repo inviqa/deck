@@ -45,9 +45,7 @@ module.exports = function () {
     {
       type: 'list',
       name: 'baseTheme',
-      message: () => {
-        return 'Select a base theme';
-      },
+      message: 'Select a base theme',
       choices: [
         'Stable',
         'Classy'
