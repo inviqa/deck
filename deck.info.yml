@@ -1,0 +1,16 @@
+name: Deck
+description: Base theme that follows Inviqa standards and best practices.
+type: theme
+core: 8.x
+base theme: stable
+
+regions:
+  header: Header
+  featured: Featured
+  content: Content
+  sidebar_first: First sidebar
+  sidebar_second: Second sidebar
+  footer: Footer
+
+libraries:
+  - core/normalize
