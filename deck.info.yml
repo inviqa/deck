@@ -12,8 +12,12 @@ regions:
   sidebar_second: Second sidebar
   footer: Footer
 
+# Add our custom libraries. We add core/drupal to get access to the global Drupal
+# object.
 libraries:
   - core/normalize
+  - core/drupal
 
+# Remove all core libraries.
 libraries-override:
   system/base: false
