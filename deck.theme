@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Functions to support the Deck theme.
+ *
+ * There shouldn't be any hooks in this directory, they should be placed in a
+ * relevant subdirectory under the hooks directory.
+ */
+
+// Recursively load all files under the Hooks directory.
+$directory = new RecursiveDirectoryIterator(__DIR__ . DIRECTORY_SEPARATOR . 'hooks' . DIRECTORY_SEPARATOR);
+$recIterator = new RecursiveIteratorIterator($directory);
+$regex = new RegexIterator($recIterator, '/\.(inc|php)$/i');
+
+foreach ($regex as $item) {
+  include $item->getPathname();
+}
