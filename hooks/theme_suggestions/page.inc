@@ -1,4 +1,5 @@
 <?php
+use Drupal\node\Entity\Node;
 
 /**
  * @file
