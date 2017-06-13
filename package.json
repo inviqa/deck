@@ -1,0 +1,12 @@
+{
+  "name": "Deck",
+  "version": "1.0.0",
+  "description": "Libraries for the Deck Drupal base theme.",
+  "main": "index.js",
+  "repository": "git@github.com:inviqa/deck.git",
+  "author": "Matt Chapman <mchapman@inviqa.com>",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "node-sass": "^4.5.3"
+  }
+}
