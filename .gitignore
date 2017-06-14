@@ -4,7 +4,6 @@
 
 bower_components
 node_modules
-assets/dist
 
 # --------------------------------------------------------------------
 # IDE and editor ignores.

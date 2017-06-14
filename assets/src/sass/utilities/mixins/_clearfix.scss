@@ -1,0 +1,13 @@
+/**
+ * @file
+ * Clearfix mixin.
+ */
+
+/// Allow an element to clear it's child elements.
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
