@@ -1,2 +1,5 @@
-# Deck currently ships with no custom or contrib libraries, and instead leaves
-# everything up to the developer.
+core:
+  version: 1.0
+  css:
+    base:
+      assets/dist/css/deck.css: {}
