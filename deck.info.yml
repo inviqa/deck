@@ -12,7 +12,7 @@ regions:
   sidebar_second: Second sidebar
   footer: Footer
 
-#hidden: true
+hidden: true
 
 # Add our custom libraries. We add core/drupal to get access to the global Drupal
 # object.
