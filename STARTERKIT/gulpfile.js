@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const styles = require('./tasks/styles');
 const fonts = require('./tasks/fonts');
+const images = require('./tasks/images');
 
 /**
  * STYLES
@@ -15,3 +16,9 @@ gulp.task(styles.build);
  */
 
 gulp.task(fonts);
+
+/**
+ * IMAGES
+ */
+
+gulp.task(images);
