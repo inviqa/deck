@@ -7,10 +7,17 @@
   },
   "license": "UNLICENSED",
   "private": true,
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
   "devDependencies": {
+    "autoprefixer": "^7.2.5",
+    "cssnano": "^3.10.0",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-eslint": "^4.0.2",
     "gulp-imagemin": "^4.1.0",
+    "gulp-postcss": "^7.0.1",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-stylelint": "^6.0.0",

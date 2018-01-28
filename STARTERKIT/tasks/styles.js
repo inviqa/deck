@@ -3,13 +3,24 @@ const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const stylelint = require('gulp-stylelint');
 const stylelintFormatter = require('stylelint-formatter-pretty');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
 
 const stylesSrc = './assets/src/styles/**/*.scss';
+
+// Autoprefixer browser rules are stored in package.json.
+// See query documentation here: https://github.com/ai/browserslist#queries
+const postCssPlugins = [
+  autoprefixer(),
+  cssnano(),
+];
 
 const compile = function () {
   return gulp.src(stylesSrc)
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
+    .pipe(postcss(postCssPlugins))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./assets/dist/styles'));
 };

@@ -5,7 +5,7 @@ const images = require('./tasks/images');
 const scripts = require('./tasks/scripts');
 
 gulp.task(styles.compile);
-gulp.task(styles.lint); 
+gulp.task(styles.lint);
 gulp.task(styles.build);
 
 gulp.task(scripts.lint);
