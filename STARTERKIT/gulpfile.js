@@ -8,6 +8,7 @@ gulp.task(styles.compile);
 gulp.task(styles.lint);
 gulp.task(styles.build);
 
+gulp.task(scripts.compile);
 gulp.task(scripts.lint);
 gulp.task(scripts.build);
 
