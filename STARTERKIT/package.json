@@ -1,0 +1,33 @@
+{
+  "name": "deck-starterkit",
+  "version": "1.0.0",
+  "description": "Tools for your Deck subtheme.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^7.2.5",
+    "cssnano": "^3.10.0",
+    "glob": "^7.1.2",
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-eslint": "^4.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-stylelint": "^6.0.0",
+    "plugin-error": "^1.0.1",
+    "stylelint": "^8.4.0",
+    "stylelint-formatter-pretty": "^1.0.3",
+    "ts-loader": "^3.3.1",
+    "uglifyjs-webpack-plugin": "^1.1.6",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {}
+}

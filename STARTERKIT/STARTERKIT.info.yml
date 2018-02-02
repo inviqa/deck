@@ -1,8 +1,8 @@
-name: Deck
-description: Barebones base theme.
+name: Deck starter kit
+description: 'Basic Drupal 8 starter theme.'
 type: theme
 core: 8.x
-base theme: stable
+base theme: deck
 
 regions:
   header: Header
@@ -11,5 +11,3 @@ regions:
   sidebar_first: First sidebar
   sidebar_second: Second sidebar
   footer: Footer
-
-hidden: true
