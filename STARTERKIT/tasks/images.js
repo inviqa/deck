@@ -21,7 +21,7 @@ const config = [
 ];
 
 const compress = function () {
-  gulp.src('./assets/src/images/**/*')
+  return gulp.src('./assets/src/images/**/*')
     .pipe(imagemin(config))
     .pipe(gulp.dest('./assets/dist'));
 };
