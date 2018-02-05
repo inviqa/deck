@@ -13,9 +13,9 @@ const config = [
   }),
   imagemin.svgo({
     plugins: [
-      { removeViewBox: true },
-      { cleanupIDs: true },
-      { cleanupAttrs: true },
+      {removeViewBox:true},
+      {cleanupIDs:true},
+      {cleanupAttrs:true},
     ]
   })
 ];
