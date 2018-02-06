@@ -1,8 +1,8 @@
-const gulp = require('gulp');
-const styles = require('./tasks/styles');
-const fonts = require('./tasks/fonts');
-const images = require('./tasks/images');
-const scripts = require('./tasks/scripts');
+const gulp = require("gulp");
+const styles = require("./tasks/styles");
+const fonts = require("./tasks/fonts");
+const images = require("./tasks/images");
+const scripts = require("./tasks/scripts");
 
 gulp.task(styles.compile);
 gulp.task(styles.lint);
@@ -14,3 +14,10 @@ gulp.task(scripts.build);
 
 gulp.task(fonts);
 gulp.task(images);
+
+gulp.task(
+  "default",
+  gulp.parallel("styles", "scripts", "fonts", "images", function(done) {
+    done();
+  })
+);
